@@ -386,7 +386,7 @@
                         newCell.classList.add('deployer');
                         var contract = cell;
                         var truncatedContract = contract.length > 12 ? contract.slice(0, 6) + '...' + contract.slice(-6) : contract;
-                        newCell.innerHTML = '<a href="http://www.puush.fun/coin/' + encodeURI(contract) + '" target="_blank">' + truncatedContract + '</a>';
+                        newCell.innerHTML = '<a href="http://www.cronoscan.com/address/' + encodeURI(contract) + '" target="_blank">' + truncatedContract + '</a>';
                         newCell.setAttribute('data-label', 'Contract');
                     } else {
                         newCell.textContent = cell;
