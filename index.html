@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Puush.Fun Deployments</title>
+    <style>
+        /* Styles for the main heading */
+        h1 {
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            color: #5bc781;
+            font-size: 1.5em;
+        }
+
+        /* Styles for the body */
+        body {
+            background-color: #4b4a52;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            color: #b6b6b6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles for the table container */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 20px -10px 20px;
+            padding: 0 20px;
+            overflow-x: auto;
+        }
+
+        /* Styles for the table */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            background-color: #282c34;
+            padding: 30px 30px 30px 30px ; /* controls size of grey background top right bottom left*/
+            table-layout: auto;
+        }
+
+        /* Styles for table cells and headers */
+        table td, table th {
+            text-align: center;
+            padding: 10px;
+            color: #b6b6b6;
+            position: relative;
+        }
+
+        table th, table td {
+            white-space: nowrap;
+        }
+
+        table th.width, table td.width {
+            width: 10%;
+        }
+        table th.date, table td.date {
+            width: 15%;
+        }
+        table th.deployer, table td.deployer {
+            width: 15%;
+        }
+
+        table th.narrow, table td.narrow {
+            width: 10%;
+        }
+
+        /* Styles for table rows */
+        table tr {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table tr td:first-child, table tr th:first-child {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        table tr td:last-child, table tr th:last-child {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        /* Styles for links */
+        a {
+            color: #11b7af;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #11b7af;
+        }
+
+                /* Styles for the footer text */
+        .footer-text {
+            text-align: left;
+            color: #b6b6b6;
+            margin-top: 0px;
+            padding:0px;
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+
+        .header{
+            color: #11b7af; /* Tomato color */
+            font-weight: bold;
+            font-size: 0.9em;
+            
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            table th, table td {
+                padding: 2px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            table th:nth-child(1),
+            table td:nth-child(1),
+            table th:nth-child(2),
+            table td:nth-child(2),
+            table th:nth-child(11),
+            table td:nth-child(11) {
+                display: none;
+            }
+            
+  table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            background-color: transparent;
+            padding: 0px 0px 0px 0px ; /* controls size of grey background top right bottom left*/
+            table-layout: auto;
+            
+        }
+            
+
+            table tr {
+                display: block;
+                border: 0.5px solid #5bc781;
+                margin-bottom: 15px; /*controls distance of blocks(cells)*/
+                margin-right: 0px;
+                border-radius: 10px;
+                padding: 20px;
+                background:#282c34;
+                overflow:hidden;
+                tex-overflow: ellipsis;
+            }
+
+            table th, table td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: left;
+                margin-bottom: 10px;
+               
+                
+            }
+
+            table thead {
+                display: none;
+                
+            }
+
+            table td {
+                position: relative;
+                padding-left: 50%;
+            }
+
+            table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 45%;
+                padding-left: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                background: #282c34;
+                color: #fff;
+            }
+
+                    /* Styles for the footer text */
+        .footer-text {
+            text-align: left;
+            color: #b6b6b6;
+            margin-top: -30px;
+            padding:0px;
+            margin-left: 50px;
+            margin-right: 50px;
+            font-size: 0.5em;
+        }
+
+        .header{
+            color: #11b7af; /* Tomato color */
+            font-weight: bold;
+            font-size: 0.5em;
+            
+        }
+            
+        }
+
+        @media (max-width: 850px) and (orientation: landscape) {
+            body {
+                font-size: 0.8em;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+                background-color: #282c34;
+                padding: 5px;
+                table-layout: auto;
+                font-size: 0.6em;
+            }
+
+            table th, table td {
+                padding: 2px;
+                text-align: center;
+            }
+
+            table th.width, table td.width {
+                width: 10%;
+            }
+            table th.date, table td.date {
+                width: 10%;
+            }
+            table th.deployer, table td.deployer {
+                width: 5%;
+            }
+            table th.narrow, table td.narrow {
+                width: 10%;
+            }
+
+                    /* Styles for the footer text */
+        .footer-text {
+            text-align: left;
+            color: #b6b6b6;
+            margin-top: 10px;
+            padding:0px;
+            margin-left: 50px;
+            font-size: 0.4em;
+        }
+
+        .header{
+            color: #11b7af; /* Tomato color */
+            font-weight: bold;
+            font-size: 0.8em;
+            
+        }
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <h1>Puush.Fun Deployments</h1>
+    <div class="table-container">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th class="width">Transaction ID</th>
+                    <th>Block</th>
+                    <th class="date">Date</th>
+                    <th class="deployer">Deployer</th>
+                    <th class="narrow">Initial Cro</th>
+                    <th class="narrow">Name</th>
+                    <th class="narrow">Symbol</th>
+                    <th class="narrow">Dpl. Balance</th>
+                    <th class="narrow">Fresh Wallet</th>
+                    <th class="narrow">Prev. Ca's</th>
+                    <th class="deployer">Contract</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be inserted here -->
+            </tbody>
+        </table>
+        </div>
+    
+         <div class="footer-text">
+             
+        <p><span class="header">Initial Cro:</span> How much supply deployer bought + 50cro launch fee.
+        <br><span class="header">Dpl. Balance:</span> How much cro deployer had in his wallet after launch. 
+        <br> <span class="header">Fresh Wallet:</span> Fresh wallet created to launch token. Yes or No. 
+        <br> <span class="header">Previous Ca's:</span> Has this deployer launched other contracts in the past? If yes, number of previous contracts will show. If no, "New" will show. 
+        
+        </p>
+    
+    </div>
+
+    <script>
+        function convertUnixTimestampToDate(unixTimestamp) {
+            var date = new Date(unixTimestamp * 1000);
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                              "July", "August", "September", "October", "November", "December"];
+            var month = monthNames[date.getMonth()];
+            var day = date.getDate();
+            var hours = ('0' + date.getHours()).slice(-2);
+            var minutes = ('0' + date.getMinutes()).slice(-2);
+            var seconds = ('0' + date.getSeconds()).slice(-2);
+            return `${month} ${day}, ${hours}:${minutes}:${seconds}`;
+        };
+
+        function updateTable(data) {
+            console.log('Updating table with data:', data);
+            var tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+
+            if (!Array.isArray(data) || data.length === 0) {
+                console.error('Invalid data format or empty data array.');
+                return;
+            }
+
+            data.sort(function(a, b) {
+                return b[2] - a[2];
+            });
+
+            var slicedData = data.slice(0, 10);
+
+            slicedData.forEach(function(row) {
+                var newRow = tableBody.insertRow();
+                row.forEach(function(cell, index) {
+                    var newCell = newRow.insertCell();
+
+                    if (index === 0) {
+                        newCell.classList.add('width');
+                        var txHash = cell.split('/').pop();
+                        var shortenedTxHash = txHash.slice(0, 6) + '...' + txHash.slice(-6);
+                        newCell.innerHTML = '<a href="' + encodeURI(cell) + '" target="_blank">' + shortenedTxHash + '</a>';
+                        newCell.setAttribute('data-label', 'Transaction ID');
+                    } else if (index === 1) {
+                        newCell.innerHTML = '<a href="http://www.cronoscan.com/block/' + cell + '" target="_blank">' + cell +                           '</a>';
+                        newCell.setAttribute('data-label', 'Block');
+                    } else if (index === 2) {
+                        newCell.classList.add('date');
+                        newCell.textContent = convertUnixTimestampToDate(cell);
+                        newCell.setAttribute('data-label', 'Date');
+                    } else if (index === 3) {
+                        newCell.classList.add('deployer');
+                        var address = cell;
+                        var shortenedAddress = address.length > 10 ? address.slice(0, 6) + '...' + address.slice(-6) : address;
+                        newCell.innerHTML = '<a href="http://www.cronoscan.com/address/' + address + '" target="_blank">' +                            shortenedAddress + '</a>';
+                        newCell.setAttribute('data-label', 'Deployer');
+                    } else if (index === 4) {
+                        newCell.classList.add('narrow');
+                        var value = parseFloat(cell);
+                        newCell.textContent = value.toFixed(2);
+                        newCell.setAttribute('data-label', 'Initial Cro');
+                    } else if (index === 5) {
+                        newCell.classList.add('narrow');
+                        newCell.textContent = cell;
+                        newCell.setAttribute('data-label', 'Name');
+                    } else if (index === 6) {
+                        newCell.classList.add('narrow');
+                        newCell.textContent = cell;
+                        newCell.setAttribute('data-label', 'Symbol');
+                    } else if (index === 7) {
+                        newCell.classList.add('narrow');
+                        newCell.textContent = cell;
+                        newCell.setAttribute('data-label', 'Dev Balance');
+                    } else if (index === 8) {
+                        newCell.classList.add('narrow');
+                        newCell.textContent = cell;
+                        newCell.setAttribute('data-label', 'Fresh Wallet');
+                    } else if (index === 9) {
+                        newCell.classList.add('narrow');
+                        newCell.textContent = cell;
+                        newCell.setAttribute('data-label', 'Prev. Ca\'s');
+                    } else if (index === 10) {
+                        newCell.classList.add('deployer');
+                        var contract = cell;
+                        var truncatedContract = contract.length > 12 ? contract.slice(0, 6) + '...' + contract.slice(-6) : contract;
+                        newCell.innerHTML = '<a href="http://www.puush.fun/coin/' + encodeURI(contract) + '" target="_blank">' + truncatedContract + '</a>';
+                        newCell.setAttribute('data-label', 'Contract');
+                    } else {
+                        newCell.textContent = cell;
+                    }
+                });
+            });
+        };
+
+        function fetchData() {
+            console.log('Fetching data...');
+            fetch('https://script.google.com/macros/s/AKfycbyBP4EeK7YWsK0aW3rs3bttWFgDaRxcqNAQ_Rzz2Q6nhacT37UoRdsYHgiYWV_uawLF/exec')
+                .then(response => response.json())
+                .then(data => updateTable(data))
+                .catch(error => console.error('Error fetching data:', error));
+        };
+
+        setInterval(fetchData, 5000);
+
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+</body>
+</html>
