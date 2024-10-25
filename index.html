@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <script src="https://cdn.jsdelivr.net/npm/ethers@5.0.0/dist/ethers.umd.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +45,7 @@
             border-collapse: separate;
             border-spacing: 0 10px;
             background-color: #282c34;
-            padding: 30px 30px 30px 30px ; /* controls size of grey background top right bottom left*/
+            padding: 30px 30px 30px 30px; /* controls size of grey background top right bottom left */
             table-layout: auto;
         }
 
@@ -62,9 +64,11 @@
         table th.width, table td.width {
             width: 10%;
         }
+
         table th.date, table td.date {
             width: 15%;
         }
+
         table th.deployer, table td.deployer {
             width: 15%;
         }
@@ -100,21 +104,20 @@
             color: #11b7af;
         }
 
-                /* Styles for the footer text */
+        /* Styles for the footer text */
         .footer-text {
             text-align: left;
             color: #b6b6b6;
             margin-top: 0px;
-            padding:0px;
+            padding: 0px;
             margin-left: 20px;
             font-size: 0.9em;
         }
 
-        .header{
+        .header {
             color: #11b7af; /* Tomato color */
             font-weight: bold;
             font-size: 0.9em;
-            
         }
 
         /* Responsive Design */
@@ -122,6 +125,7 @@
             h1 {
                 font-size: 1.2em;
             }
+
             table th, table td {
                 padding: 2px;
             }
@@ -132,32 +136,29 @@
             table td:nth-child(1),
             table th:nth-child(2),
             table td:nth-child(2),
-            table th:nth-child(11),
-            table td:nth-child(11) {
+          {
                 display: none;
             }
-            
-  table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 10px;
-            background-color: transparent;
-            padding: 0px 0px 0px 0px ; /* controls size of grey background top right bottom left*/
-            table-layout: auto;
-            
-        }
-            
+
+            table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+                background-color: transparent;
+                padding: 0px 0px 0px 0px;
+                table-layout: auto;
+            }
 
             table tr {
                 display: block;
                 border: 0.5px solid #5bc781;
-                margin-bottom: 15px; /*controls distance of blocks(cells)*/
+                margin-bottom: 15px; /* controls distance of blocks(cells) */
                 margin-right: 0px;
                 border-radius: 10px;
                 padding: 20px;
-                background:#282c34;
-                overflow:hidden;
-                tex-overflow: ellipsis;
+                background: #282c34;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             table th, table td {
@@ -166,13 +167,10 @@
                 box-sizing: border-box;
                 text-align: left;
                 margin-bottom: 10px;
-               
-                
             }
 
             table thead {
                 display: none;
-                
             }
 
             table td {
@@ -192,24 +190,22 @@
                 color: #fff;
             }
 
-                    /* Styles for the footer text */
-        .footer-text {
-            text-align: left;
-            color: #b6b6b6;
-            margin-top: -30px;
-            padding:0px;
-            margin-left: 50px;
-            margin-right: 50px;
-            font-size: 0.5em;
-        }
+            /* Styles for the footer text */
+            .footer-text {
+                text-align: left;
+                color: #b6b6b6;
+                margin-top: -30px;
+                padding: 0px;
+                margin-left: 50px;
+                margin-right: 50px;
+                font-size: 0.5em;
+            }
 
-        .header{
-            color: #11b7af; /* Tomato color */
-            font-weight: bold;
-            font-size: 0.5em;
-            
-        }
-            
+            .header {
+                color: #11b7af; /* Tomato color */
+                font-weight: bold;
+                font-size: 0.5em;
+            }
         }
 
         @media (max-width: 850px) and (orientation: landscape) {
@@ -235,38 +231,37 @@
             table th.width, table td.width {
                 width: 10%;
             }
+
             table th.date, table td.date {
                 width: 10%;
             }
+
             table th.deployer, table td.deployer {
                 width: 5%;
             }
+
             table th.narrow, table td.narrow {
                 width: 10%;
             }
 
-                    /* Styles for the footer text */
-        .footer-text {
-            text-align: left;
-            color: #b6b6b6;
-            margin-top: 10px;
-            padding:0px;
-            margin-left: 40px;
-            font-size: 0.4em;
+            /* Styles for the footer text */
+            .footer-text {
+                text-align: left;
+                color: #b6b6b6;
+                margin-top: 10px;
+                padding: 0px;
+                margin-left: 40px;
+                font-size: 0.4em;
+            }
+
+            .header {
+                color: #11b7af; /* Tomato color */
+                font-weight: bold;
+                font-size: 0.8em;
+            }
         }
-
-        .header{
-            color: #11b7af; /* Tomato color */
-            font-weight: bold;
-            font-size: 0.8em;
-            
-        }
-        }
-
-
-
-        
     </style>
+   
 </head>
 <body>
     <h1>Puush.Fun Deployments</h1>
@@ -291,20 +286,17 @@
                 <!-- Data rows will be inserted here -->
             </tbody>
         </table>
-        </div>
+    </div>
     
-         <div class="footer-text">
-             
+    <div class="footer-text">
         <p><span class="header">Initial Cro:</span> How much supply deployer bought + 50cro launch fee.
         <br><span class="header">Dpl. Balance:</span> How much cro deployer had in his wallet after launch. 
         <br> <span class="header">Fresh Wallet:</span> Fresh wallet created to launch token. Yes or No. 
         <br> <span class="header">Previous Ca's:</span> Has this deployer launched other contracts in the past? If yes, number of previous contracts will show. If no, "New" will show. 
-        
         </p>
-    
     </div>
 
-    <script>
+   <script>
         function convertUnixTimestampToDate(unixTimestamp) {
             var date = new Date(unixTimestamp * 1000);
             var monthNames = ["January", "February", "March", "April", "May", "June",
@@ -315,7 +307,7 @@
             var minutes = ('0' + date.getMinutes()).slice(-2);
             var seconds = ('0' + date.getSeconds()).slice(-2);
             return `${month} ${day}, ${hours}:${minutes}:${seconds}`;
-        };
+        }
 
         function updateTable(data) {
             console.log('Updating table with data:', data);
@@ -345,7 +337,7 @@
                         newCell.innerHTML = '<a href="' + encodeURI(cell) + '" target="_blank">' + shortenedTxHash + '</a>';
                         newCell.setAttribute('data-label', 'Transaction ID');
                     } else if (index === 1) {
-                        newCell.innerHTML = '<a href="http://www.cronoscan.com/block/' + cell + '" target="_blank">' + cell +                           '</a>';
+                        newCell.innerHTML = '<a href="http://www.cronoscan.com/block/' + cell + '" target="_blank">' + cell + '</a>';
                         newCell.setAttribute('data-label', 'Block');
                     } else if (index === 2) {
                         newCell.classList.add('date');
@@ -355,7 +347,7 @@
                         newCell.classList.add('deployer');
                         var address = cell;
                         var shortenedAddress = address.length > 10 ? address.slice(0, 6) + '...' + address.slice(-6) : address;
-                        newCell.innerHTML = '<a href="http://www.cronoscan.com/address/' + address + '" target="_blank">' +                            shortenedAddress + '</a>';
+                        newCell.innerHTML = '<a href="http://www.cronoscan.com/address/' + address + '" target="_blank">' + shortenedAddress + '</a>';
                         newCell.setAttribute('data-label', 'Deployer');
                     } else if (index === 4) {
                         newCell.classList.add('narrow');
@@ -384,16 +376,27 @@
                         newCell.setAttribute('data-label', 'Prev. Ca\'s');
                     } else if (index === 10) {
                         newCell.classList.add('deployer');
-                        var contract = cell;
-                        var truncatedContract = contract.length > 12 ? contract.slice(0, 6) + '...' + contract.slice(-6) : contract;
-                        newCell.innerHTML = '<a href="http://www.puush.fun/coin/' + encodeURI(contract) + '" target="_blank">' + truncatedContract + '</a>';
-                        newCell.setAttribute('data-label', 'Contract');
+
+                        try {
+                            // Normalize contract address to checksum
+                            var contract = cell; // Original address
+                            var checksumContract = ethers.utils.getAddress(contract); // Convert to checksum
+                            console.log('Checksum contract address:', checksumContract);
+
+                            // Truncate for display
+                            var truncatedContract = checksumContract.length > 12 ? checksumContract.slice(0, 6) + '...' + checksumContract.slice(-6) : checksumContract;
+                            newCell.innerHTML = '<a href="http://www.puush.fun/coin/' + encodeURI(checksumContract) + '" target="_blank">' + truncatedContract + '</a>';
+                            newCell.setAttribute('data-label', 'Contract');
+                        } catch (error) {
+                            console.error('Invalid contract address:', error);
+                            newCell.textContent = 'Invalid Address';
+                        }
                     } else {
-                        newCell.textContent = cell;
+                        newCell.textContent = cell; // For any other columns
                     }
                 });
             });
-        };
+        }
 
         function fetchData() {
             console.log('Fetching data...');
@@ -401,11 +404,13 @@
                 .then(response => response.json())
                 .then(data => updateTable(data))
                 .catch(error => console.error('Error fetching data:', error));
-        };
+        }
 
         setInterval(fetchData, 5000);
-
         document.addEventListener('DOMContentLoaded', fetchData);
     </script>
+
+
+  
 </body>
 </html>
